@@ -6,6 +6,7 @@ class Solution {
         }else{
             answer =2;
         }
+        answer = str1.contains(str2) ? 1 : 2;
         return answer;
     }
 }
