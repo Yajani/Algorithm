@@ -1,13 +1,18 @@
+import java.util.*;
+
 class Solution {
     public int solution(int[] numbers) {
-        int answer = -1;
-        int sum = 0;
-        for(int i =0; i<numbers.length;i++){
-            sum += numbers[i]; //모두 더한 합을 구함
+        Set<Integer> set = new HashSet<Integer>();
+        for(int v : numbers){
+            set.add(v); //입력받은 숫자 넣어주기
         }
-        answer = 45 -sum; //0~9를 더하면 45니깐 거기서 빼준 값을 리턴
-        return answer;
+        
+        int sum = 0;
+        for(int i =0 ; i<= 9; i++){ //1~9까지 숫자를 순회하며 set에 포함되어있지 않은 숫자의 합을 구해서 반환
+            if(set.contains(i)) continue;
+            sum += i;
+        }
+        return sum;
     }
 }
 
-//전체에서 없는숫자더하기니까 전체에서 있는숫자들을 더해서 빼준다 !!
