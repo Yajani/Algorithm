@@ -13,7 +13,7 @@ class Solution {
                 answer.add(Integer.parseInt(str));
             }
         }
-        
+        //리스트를 배열로 변환
         return answer.stream().mapToInt(Integer::intValue).toArray();
     }
 }
