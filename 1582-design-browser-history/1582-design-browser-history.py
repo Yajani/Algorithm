@@ -1,33 +1,42 @@
-class ListNode:
-    def __init__(self, val=0, next=None, prev=None):
-        self.val = val
-        self.next = next
-        self.prev = prev
-
 class BrowserHistory(object):
-    def __init__(self, homepage):
-        self.head = self.current = ListNode(val=homepage)
-    def visit(self, url):
-        self.current.next = ListNode(val=url,prev=self.current)
-        self.current = self.current.next
+    def __init__(self,homepage):
+        
+        self.list = [homepage]
+        self.current_idx = 0
+    
+    def visit(self,url): # O(n)
+        """
+        :type url: str
+        :rtype: None
+        """
+        while self.current_idx != len(self.list) - 1:
+            self.list.pop()
+        
+        self.list.append(url)
+        self.current_idx += 1
+        
         return None
-    def back(self, steps):
-        while steps > 0 and self.current.prev != None:
-            steps -= 1
-            self.current = self.current.prev
-        return self.current.val    
-    def forward(self, steps):
-        while steps > 0 and self.current.next != None:
-            steps -= 1
-            self.current = self.current.next
-        return self.current.val         
+    
+    def back(self,steps): # O(1)
+        """ 
+        :type steps: int
+        :rtype: str
+        """
+        if self.current_idx < steps:
+            self.current_idx = 0
+        else:
+            self.current_idx -= steps
         
-
+        return self.list[self.current_idx]
+    
+    def forward(self,steps): # O(1)
+        """
+        :type steps: int
+        "rtype: str
+        """
+        if self.current_idx + steps > len(self.list) - 1:
+            self.current_idx = len(self.list) - 1
+        else:
+            self.current_idx += steps
         
-
-
-# Your BrowserHistory object will be instantiated and called as such:
-# obj = BrowserHistory(homepage)
-# obj.visit(url)
-# param_2 = obj.back(steps)
-# param_3 = obj.forward(steps)
+        return self.list[self.current_idx]
