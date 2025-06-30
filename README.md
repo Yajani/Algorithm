@@ -20,6 +20,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Stack
 |  |
 | ------- |
+| [0020-valid-parentheses](https://github.com/Yajani/Algorithm/tree/master/0020-valid-parentheses) |
 | [1582-design-browser-history](https://github.com/Yajani/Algorithm/tree/master/1582-design-browser-history) |
 ## Design
 |  |
@@ -33,4 +34,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [1582-design-browser-history](https://github.com/Yajani/Algorithm/tree/master/1582-design-browser-history) |
+## String
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/Yajani/Algorithm/tree/master/0020-valid-parentheses) |
 <!---LeetCode Topics End-->
